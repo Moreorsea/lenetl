@@ -4,5 +4,5 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
   app: {
     baseUrl: '/lenetl/'
-  }
+  },
 })
