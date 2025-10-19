@@ -1,6 +1,7 @@
 <template>
   <h1>lenetl</h1>
   <button class="button" @click="handleClick">click here</button>
+  <button class="new-button" @click="handleClick2">click!</button>
 </template>
 
 <script setup>
@@ -20,8 +21,14 @@ const trackUniversalEvent = (eventName, params) => {
 }
 
 const handleClick = () => {
-  console.log('HANDLE CLICK')
   trackUniversalEvent('button_click', {
+    button_name: 'cta',
+    section: 'header'
+  })
+}
+
+const handleClick2 = () => {
+  trackUniversalEvent('button_click_second', {
     button_name: 'cta',
     section: 'header'
   })
