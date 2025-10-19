@@ -4,7 +4,6 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
   modules: ['nuxt-gtag'],
   app: {
-    baseUrl: '/lenetl/',
     head: {
       script: [
         {

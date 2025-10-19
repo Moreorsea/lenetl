@@ -1,7 +1,7 @@
 <template>
   <header></header>
   <main>
-    <h1>lenetl</h1>
+    <slot />
   </main>
   <footer></footer>
 </template>
