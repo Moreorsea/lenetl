@@ -1,36 +1,39 @@
 <template>
   <h1>lenetl</h1>
   <button class="button" @click="handleClick">click here</button>
-  <button class="new-button" @click="handleClick2">click!</button>
+  <button class="button" @click="handleClick">click!</button>
+  <button class="new-button" @click="testGTM">click 3</button>
 </template>
 
 <script setup>
-const { gtag } = useGtag()
-
-const trackUniversalEvent = (eventName, params) => {
-  // Отправка в GA4 через gtag
-  gtag('event', eventName, params)
-
-  // Отправка в GTM (если нужно)
-  if (window.dataLayer) {
-    window.dataLayer.push({
-      event: eventName,
-      ...params
-    })
-  }
-}
+const { trackPageView, trackEvent } = useGtm()
 
 const handleClick = () => {
-  trackUniversalEvent('button_click', {
+  trackEvent('button_click', {
     button_name: 'cta',
     section: 'header'
   })
 }
 
 const handleClick2 = () => {
-  trackUniversalEvent('button_click_second', {
+  trackEvent('button_click_second', {
     button_name: 'cta',
     section: 'header'
   })
 }
+
+
+const testGTM = () => {
+  if (window.dataLayer) {
+    window.dataLayer.push({
+      event: 'test_event',
+      category: 'test',
+      action: 'click'
+    });
+    console.log('GTM event sent');
+  } else {
+    console.log('GTM not loaded');
+  }
+}
+
 </script>

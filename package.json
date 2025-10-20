@@ -10,13 +10,14 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "nuxt": "^3.17.7",
-    "nuxt-gtag": "^4.1.0",
+    "nuxt": "3.17.7",
     "vue": "^3.5.22",
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
+    "@nuxt/types": "^2.18.1",
     "@types/node": "^24.8.1",
-    "gh-pages": "^6.3.0"
+    "typescript": "^5.9.3",
+    "vue-tsc": "^3.1.1"
   }
 }
